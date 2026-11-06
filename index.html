@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mahesh | Senior Frontend Developer</title>
+  <meta name="description" content="Portfolio of Mahesh, Senior Frontend Developer in Hyderabad specializing in Angular, fintech/KYC onboarding UIs and accessible web apps.">
+  <meta property="og:title" content="Mahesh | Senior Frontend Developer">
+  <meta property="og:description" content="Angular developer with 7+ years of experience building accessible fintech and KYC onboarding experiences.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dmahesh0528.github.io/">
+  <meta name="theme-color" content="#0f766e">
+  <style>
+    :root {
+      --bg: #fafaf9;
+      --surface: #ffffff;
+      --text: #1c1917;
+      --muted: #57534e;
+      --border: #e7e5e4;
+      --accent: #0f766e;
+      --accent-text: #ffffff;
+      --radius: 14px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0c0a09;
+        --surface: #1c1917;
+        --text: #fafaf9;
+        --muted: #a8a29e;
+        --border: #292524;
+        --accent: #2dd4bf;
+        --accent-text: #042f2e;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    a { color: var(--accent); }
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    .skip {
+      position: absolute; left: -999px; top: 8px;
+      background: var(--accent); color: var(--accent-text);
+      padding: 8px 14px; border-radius: 8px; z-index: 10;
+    }
+    .skip:focus { left: 8px; }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+    header.site {
+      position: sticky; top: 0; z-index: 5;
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    header.site .wrap {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; height: 60px;
+    }
+    .brand { font-weight: 700; text-decoration: none; color: var(--text); }
+    nav ul { list-style: none; display: flex; gap: 18px; margin: 0; padding: 0; flex-wrap: wrap; }
+    nav a { text-decoration: none; color: var(--muted); font-size: 0.95rem; }
+    nav a:hover { color: var(--accent); }
+
+    .hero { padding: 80px 0 56px; }
+    .hero .tag {
+      display: inline-block; font-size: 0.85rem; font-weight: 600;
+      color: var(--accent); letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    .hero h1 { font-size: clamp(2.1rem, 6vw, 3.4rem); line-height: 1.15; margin: 10px 0 16px; }
+    .hero p.lead { font-size: 1.15rem; color: var(--muted); max-width: 62ch; margin: 0 0 28px; }
+    .btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; padding: 11px 22px; border-radius: 999px;
+      font-weight: 600; text-decoration: none; border: 2px solid var(--accent);
+    }
+    .btn.primary { background: var(--accent); color: var(--accent-text); }
+    .btn.ghost { color: var(--accent); }
+
+    section { padding: 56px 0; border-top: 1px solid var(--border); }
+    section h2 { font-size: 1.7rem; margin: 0 0 24px; }
+
+    .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 22px;
+    }
+    .card h3 { margin: 0 0 8px; font-size: 1.15rem; }
+    .card p { margin: 0 0 12px; color: var(--muted); }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0 0 14px; list-style: none; }
+    .chips li {
+      font-size: 0.8rem; padding: 3px 10px; border-radius: 999px;
+      border: 1px solid var(--border); color: var(--muted);
+    }
+    .links { display: flex; gap: 16px; flex-wrap: wrap; font-weight: 600; font-size: 0.95rem; }
+
+    .timeline { list-style: none; padding: 0; margin: 0; display: grid; gap: 18px; }
+    .timeline li { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 22px; }
+    .timeline h3 { margin: 0; font-size: 1.05rem; }
+    .timeline .meta { color: var(--muted); font-size: 0.9rem; margin: 2px 0 10px; }
+    .timeline ul { margin: 0; padding-left: 20px; color: var(--muted); }
+
+    .skills { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .skills h3 { margin: 0 0 8px; font-size: 1rem; }
+    .skills .chips { margin: 0; }
+
+    footer { border-top: 1px solid var(--border); padding: 28px 0 40px; color: var(--muted); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="#top">Mahesh</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+
+      <div class="hero" id="top">
+        <span class="tag">Senior Frontend Developer · Hyderabad, India</span>
+        <h1>I build accessible, fast Angular apps for fintech.</h1>
+        <p class="lead">
+          7+ years in frontend engineering, 4.5+ of them specializing in Angular. I focus on
+          KYC and onboarding journeys, polished UI implementation and WCAG-compliant interfaces
+          that real users can complete without friction.
+        </p>
+        <div class="btns">
+          <a class="btn primary" href="#projects">View projects</a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+
+      <section id="about" aria-labelledby="about-h">
+        <h2 id="about-h">About</h2>
+        <p>
+          I'm a frontend developer who cares about both engineering quality and how an interface
+          feels to use. My work spans Angular 15 through the latest versions with standalone
+          components, Reactive Forms, Signals and typed TypeScript, backed by a strong UI/UX
+          implementation background. I've worked extensively in fintech and KYC/onboarding
+          products, where clear validation, accessible error handling and trust-building design
+          matter most.
+        </p>
+      </section>
+
+      <section id="projects" aria-labelledby="projects-h">
+        <h2 id="projects-h">Featured projects</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>VerityKYC: Angular 20 eKYC Journey</h3>
+            <p>
+              A responsive, accessibility-conscious digital KYC onboarding flow: OTP verification,
+              PAN check, selfie capture, bank validation, profile and eSign, with masked review
+              and save-and-resume. Verification calls are mocked and clearly labelled.
+            </p>
+            <ul class="chips" aria-label="Technologies">
+              <li>Angular 20</li><li>Standalone components</li><li>Reactive Forms</li>
+              <li>Signals</li><li>TypeScript</li><li>SCSS</li>
+            </ul>
+            <div class="links">
+              <a href="https://github.com/dmahesh0528/angular-ekyc-journey">Source code</a>
+              <!-- Add your live demo link here after deploying:
+              <a href="https://dmahesh0528.github.io/angular-ekyc-journey/">Live demo</a> -->
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Your next project</h3>
+            <p>
+              Add another project here: what problem it solved, what you built, and the result.
+              Copy this card block for each additional project.
+            </p>
+            <ul class="chips" aria-label="Technologies">
+              <li>Tech 1</li><li>Tech 2</li>
+            </ul>
+            <div class="links">
+              <a href="https://github.com/dmahesh0528">GitHub</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="experience" aria-labelledby="exp-h">
+        <h2 id="exp-h">Experience</h2>
+        <ul class="timeline">
+          <li>
+            <h3>Senior Frontend Developer</h3>
+            <p class="meta">Company name · Start year – Present · Hyderabad</p>
+            <ul>
+              <li>Built and maintained Angular applications for fintech and KYC/onboarding clients.</li>
+              <li>Implemented accessible, responsive UIs following WCAG guidelines.</li>
+              <li>Add a measurable result here (for example, load time or completion rate improved).</li>
+            </ul>
+          </li>
+          <li>
+            <h3>Previous role</h3>
+            <p class="meta">Company name · Years</p>
+            <ul>
+              <li>Describe your main responsibility and impact.</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section id="skills" aria-labelledby="skills-h">
+        <h2 id="skills-h">Skills</h2>
+        <div class="skills">
+          <div>
+            <h3>Frameworks</h3>
+            <ul class="chips"><li>Angular 15+</li><li>Standalone components</li><li>RxJS</li><li>Signals</li></ul>
+          </div>
+          <div>
+            <h3>Languages</h3>
+            <ul class="chips"><li>TypeScript</li><li>JavaScript</li><li>HTML5</li><li>CSS / SCSS</li></ul>
+          </div>
+          <div>
+            <h3>Practices</h3>
+            <ul class="chips"><li>Accessibility (WCAG)</li><li>Responsive design</li><li>Reactive Forms</li><li>UI/UX implementation</li></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" aria-labelledby="contact-h">
+        <h2 id="contact-h">Contact</h2>
+        <p>I'm open to Senior Frontend / Angular opportunities. The best way to reach me:</p>
+        <div class="links">
+          <a href="mailto:your-email@example.com">your-email@example.com</a>
+          <a href="https://github.com/dmahesh0528">GitHub</a>
+          <a href="https://www.linkedin.com/in/your-linkedin-id">LinkedIn</a>
+          <!-- <a href="assets/Mahesh_Resume.pdf">Resume (PDF)</a> -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">© <span id="year">2026</span> Mahesh. Built with plain HTML and CSS, hosted on GitHub Pages.</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
