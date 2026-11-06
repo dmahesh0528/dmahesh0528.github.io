@@ -3,37 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mahesh | Senior Frontend Developer</title>
-  <meta name="description" content="Portfolio of Mahesh, Senior Frontend Developer in Hyderabad specializing in Angular, fintech/KYC onboarding UIs and accessible web apps.">
-  <meta property="og:title" content="Mahesh | Senior Frontend Developer">
-  <meta property="og:description" content="Angular developer with 7+ years of experience building accessible fintech and KYC onboarding experiences.">
+  <title>Devarakonda Mahesh | Angular & Frontend UI Developer</title>
+  <meta name="description" content="Portfolio of Devarakonda Mahesh, Angular and Frontend UI Developer in Hyderabad with 8+ years of experience in fintech KYC onboarding, accessible and responsive web applications.">
+  <meta property="og:title" content="Devarakonda Mahesh | Angular & Frontend UI Developer">
+  <meta property="og:description" content="8+ years of frontend experience, 4 years of Angular. Digital KYC, fintech onboarding, accessibility and responsive UI.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://dmahesh0528.github.io/">
   <meta name="theme-color" content="#0f766e">
   <style>
     :root {
-      --bg: #fafaf9;
+      --bg: #f8fafc;
       --surface: #ffffff;
-      --text: #1c1917;
-      --muted: #57534e;
-      --border: #e7e5e4;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #e2e8f0;
       --accent: #0f766e;
       --accent-text: #ffffff;
+      --side-bg: #0f172a;
+      --side-text: #e2e8f0;
+      --side-muted: #94a3b8;
+      --side-accent: #2dd4bf;
       --radius: 14px;
+      --side-w: 270px;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #0c0a09;
-        --surface: #1c1917;
-        --text: #fafaf9;
-        --muted: #a8a29e;
-        --border: #292524;
+        --bg: #0b1220;
+        --surface: #111a2e;
+        --text: #f1f5f9;
+        --muted: #94a3b8;
+        --border: #1e293b;
         --accent: #2dd4bf;
         --accent-text: #042f2e;
+        --side-bg: #060b16;
       }
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 20px; }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     body {
       margin: 0;
@@ -46,38 +52,78 @@
     a:focus-visible, button:focus-visible {
       outline: 3px solid var(--accent);
       outline-offset: 3px;
-      border-radius: 4px;
+      border-radius: 6px;
     }
     .skip {
       position: absolute; left: -999px; top: 8px;
       background: var(--accent); color: var(--accent-text);
-      padding: 8px 14px; border-radius: 8px; z-index: 10;
+      padding: 8px 14px; border-radius: 8px; z-index: 100;
     }
     .skip:focus { left: 8px; }
-    .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
 
-    header.site {
-      position: sticky; top: 0; z-index: 5;
-      background: color-mix(in srgb, var(--bg) 88%, transparent);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
+    /* ---------- Left sidebar ---------- */
+    .sidebar {
+      position: fixed; top: 0; left: 0; bottom: 0;
+      width: var(--side-w);
+      background: var(--side-bg);
+      color: var(--side-text);
+      display: flex; flex-direction: column; align-items: center;
+      padding: 32px 20px 24px;
+      overflow-y: auto;
+      z-index: 50;
     }
-    header.site .wrap {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 16px; height: 60px;
+    .avatar {
+      width: 110px; height: 110px; border-radius: 50%;
+      display: grid; place-items: center;
+      font-size: 2.4rem; font-weight: 700; letter-spacing: 0.02em;
+      background: linear-gradient(135deg, #0f766e, #2dd4bf);
+      color: #042f2e;
+      border: 4px solid rgba(255,255,255,0.12);
+      margin-bottom: 14px;
     }
-    .brand { font-weight: 700; text-decoration: none; color: var(--text); }
-    nav ul { list-style: none; display: flex; gap: 18px; margin: 0; padding: 0; flex-wrap: wrap; }
-    nav a { text-decoration: none; color: var(--muted); font-size: 0.95rem; }
-    nav a:hover { color: var(--accent); }
+    .sidebar .name { font-size: 1.2rem; font-weight: 700; margin: 0; text-align: center; }
+    .sidebar .role { color: var(--side-muted); font-size: 0.85rem; margin: 4px 0 22px; text-align: center; }
+    .sidebar nav { width: 100%; }
+    .sidebar nav ul { list-style: none; margin: 0; padding: 0; }
+    .sidebar nav a {
+      display: flex; align-items: center; gap: 12px;
+      padding: 11px 14px; margin: 2px 0;
+      color: var(--side-muted); text-decoration: none;
+      border-radius: 10px; font-size: 0.97rem;
+      border-left: 3px solid transparent;
+    }
+    .sidebar nav a:hover { color: #fff; background: rgba(255,255,255,0.06); }
+    .sidebar nav a.active {
+      color: var(--side-accent); background: rgba(45,212,191,0.1);
+      border-left-color: var(--side-accent);
+    }
+    .sidebar nav .ico { width: 20px; text-align: center; }
+    .socials { margin-top: auto; padding-top: 22px; display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .socials a {
+      color: var(--side-muted); text-decoration: none; font-size: 0.85rem;
+      border: 1px solid rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 999px;
+    }
+    .socials a:hover { color: #fff; border-color: var(--side-accent); }
 
-    .hero { padding: 80px 0 56px; }
+    .menu-btn {
+      display: none;
+      position: fixed; top: 12px; left: 12px; z-index: 60;
+      background: var(--side-bg); color: #fff;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 10px; padding: 8px 14px; font-size: 1rem; cursor: pointer;
+    }
+
+    /* ---------- Main ---------- */
+    main { margin-left: var(--side-w); }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 0 32px; }
+
+    .hero { padding: 90px 0 60px; }
     .hero .tag {
       display: inline-block; font-size: 0.85rem; font-weight: 600;
-      color: var(--accent); letter-spacing: 0.04em; text-transform: uppercase;
+      color: var(--accent); letter-spacing: 0.05em; text-transform: uppercase;
     }
-    .hero h1 { font-size: clamp(2.1rem, 6vw, 3.4rem); line-height: 1.15; margin: 10px 0 16px; }
-    .hero p.lead { font-size: 1.15rem; color: var(--muted); max-width: 62ch; margin: 0 0 28px; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; margin: 10px 0 16px; }
+    .hero p.lead { font-size: 1.12rem; color: var(--muted); max-width: 62ch; margin: 0 0 26px; }
     .btns { display: flex; gap: 12px; flex-wrap: wrap; }
     .btn {
       display: inline-block; padding: 11px 22px; border-radius: 999px;
@@ -85,181 +131,329 @@
     }
     .btn.primary { background: var(--accent); color: var(--accent-text); }
     .btn.ghost { color: var(--accent); }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin: 0 0 26px; padding: 0; list-style: none; }
+    .badges li {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 999px; padding: 4px 14px; font-size: 0.85rem; color: var(--muted);
+    }
 
     section { padding: 56px 0; border-top: 1px solid var(--border); }
     section h2 { font-size: 1.7rem; margin: 0 0 24px; }
 
-    .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); }
     .card {
       background: var(--surface); border: 1px solid var(--border);
       border-radius: var(--radius); padding: 22px;
     }
-    .card h3 { margin: 0 0 8px; font-size: 1.15rem; }
+    .card h3 { margin: 0 0 8px; font-size: 1.12rem; }
     .card p { margin: 0 0 12px; color: var(--muted); }
     .chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0 0 14px; list-style: none; }
     .chips li {
-      font-size: 0.8rem; padding: 3px 10px; border-radius: 999px;
-      border: 1px solid var(--border); color: var(--muted);
+      font-size: 0.8rem; padding: 3px 11px; border-radius: 999px;
+      border: 1px solid var(--border); color: var(--muted); background: var(--bg);
     }
     .links { display: flex; gap: 16px; flex-wrap: wrap; font-weight: 600; font-size: 0.95rem; }
 
     .timeline { list-style: none; padding: 0; margin: 0; display: grid; gap: 18px; }
-    .timeline li { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 22px; }
-    .timeline h3 { margin: 0; font-size: 1.05rem; }
-    .timeline .meta { color: var(--muted); font-size: 0.9rem; margin: 2px 0 10px; }
+    .timeline > li {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 22px 24px;
+    }
+    .timeline h3 { margin: 0; font-size: 1.1rem; }
+    .timeline .company { color: var(--accent); font-weight: 600; }
+    .timeline .meta { color: var(--muted); font-size: 0.9rem; margin: 2px 0 12px; }
     .timeline ul { margin: 0; padding-left: 20px; color: var(--muted); }
+    .timeline ul li { margin-bottom: 6px; }
 
-    .skills { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-    .skills h3 { margin: 0 0 8px; font-size: 1rem; }
+    .skills { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .skills .card { padding: 18px 20px; }
+    .skills h3 { margin: 0 0 10px; font-size: 1rem; }
     .skills .chips { margin: 0; }
 
+    .edu { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+    .edu li { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 20px; }
+    .edu strong { display: block; }
+    .edu span { color: var(--muted); font-size: 0.92rem; }
+
     footer { border-top: 1px solid var(--border); padding: 28px 0 40px; color: var(--muted); font-size: 0.9rem; }
+
+    /* ---------- Mobile ---------- */
+    @media (max-width: 900px) {
+      .menu-btn { display: block; }
+      .sidebar { transform: translateX(-100%); transition: transform 0.25s ease; }
+      .sidebar.open { transform: translateX(0); }
+      main { margin-left: 0; }
+      .wrap { padding: 0 20px; }
+      .hero { padding-top: 80px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .sidebar { transition: none; } }
   </style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to main content</a>
 
-  <header class="site">
-    <div class="wrap">
-      <a class="brand" href="#top">Mahesh</a>
-      <nav aria-label="Main">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+  <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="sidebar">☰ Menu</button>
+
+  <aside class="sidebar" id="sidebar" aria-label="Site navigation">
+    <div class="avatar" aria-hidden="true">DM</div>
+    <p class="name">Devarakonda Mahesh</p>
+    <p class="role">Angular &amp; Frontend UI Developer</p>
+
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#top" class="active"><span class="ico" aria-hidden="true">⌂</span> Home</a></li>
+        <li><a href="#about"><span class="ico" aria-hidden="true">☺</span> About</a></li>
+        <li><a href="#experience"><span class="ico" aria-hidden="true">💼</span> Experience</a></li>
+        <li><a href="#projects"><span class="ico" aria-hidden="true">▣</span> Projects</a></li>
+        <li><a href="#skills"><span class="ico" aria-hidden="true">⚙</span> Skills</a></li>
+        <li><a href="#education"><span class="ico" aria-hidden="true">🎓</span> Education</a></li>
+        <li><a href="#contact"><span class="ico" aria-hidden="true">✉</span> Contact</a></li>
+        <li><a href="assets/Devarakonda_Mahesh_Resume.pdf" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">⭳</span> Resume</a></li>
+      </ul>
+    </nav>
+
+    <div class="socials">
+      <a href="https://github.com/dmahesh0528" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/devarakonda-mahesh/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
-  </header>
+  </aside>
 
   <main id="main">
     <div class="wrap">
 
       <div class="hero" id="top">
-        <span class="tag">Senior Frontend Developer · Hyderabad, India</span>
-        <h1>I build accessible, fast Angular apps for fintech.</h1>
+        <span class="tag">Hyderabad, India</span>
+        <h1>Hi, I'm Mahesh. I build accessible, responsive Angular applications.</h1>
+        <ul class="badges" aria-label="Highlights">
+          <li>8+ years frontend / UI</li>
+          <li>4 years Angular (12–20)</li>
+          <li>Fintech &amp; KYC onboarding</li>
+          <li>Immediate joiner</li>
+        </ul>
         <p class="lead">
-          7+ years in frontend engineering, 4.5+ of them specializing in Angular. I focus on
-          KYC and onboarding journeys, polished UI implementation and WCAG-compliant interfaces
-          that real users can complete without friction.
+          Frontend developer turning Figma designs into pixel-accurate, mobile-first and
+          WCAG-aware interfaces. I specialize in multi-step Angular journeys: Reactive Forms,
+          REST API integration and reusable components for digital KYC and financial products.
         </p>
         <div class="btns">
           <a class="btn primary" href="#projects">View projects</a>
-          <a class="btn ghost" href="#contact">Get in touch</a>
+          <a class="btn ghost" href="#contact">Contact me</a>
         </div>
       </div>
 
       <section id="about" aria-labelledby="about-h">
         <h2 id="about-h">About</h2>
         <p>
-          I'm a frontend developer who cares about both engineering quality and how an interface
-          feels to use. My work spans Angular 15 through the latest versions with standalone
-          components, Reactive Forms, Signals and typed TypeScript, backed by a strong UI/UX
-          implementation background. I've worked extensively in fintech and KYC/onboarding
-          products, where clear validation, accessible error handling and trust-building design
-          matter most.
+          I'm a frontend developer with 8+ years of experience building responsive web
+          applications, including 4 years of hands-on Angular development in financial-services
+          and accounting products. I work across Angular 12–20 with TypeScript, RxJS, Reactive
+          Forms, routing, dependency injection, standalone components and Signals.
+        </p>
+        <p>
+          I convert Figma designs into accessible, mobile-first interfaces and collaborate
+          closely with backend, QA, product and UX teams from requirements through release
+          and production support.
         </p>
       </section>
 
+      <section id="experience" aria-labelledby="exp-h">
+        <h2 id="exp-h">Experience</h2>
+        <ul class="timeline">
+
+          <li>
+            <h3>Senior Frontend Developer</h3>
+            <p class="meta"><span class="company">Innodigital Solutions Pvt. Ltd.</span> · Jan 2025 – Jun 2026</p>
+            <ul>
+              <li>Developed responsive Angular interfaces for digital KYC and re-KYC applications used across desktop, tablet, Android and iOS.</li>
+              <li>Built reusable components and Reactive Forms for OTP, PAN/profile, bank, nominee, segment selection, selfie/video verification, signature and eSign journeys with conditional validation and navigation.</li>
+              <li>Integrated REST APIs with HttpClient and RxJS, handling async states and errors and resolving integration defects with backend developers.</li>
+              <li>Implemented component communication, services, dependency injection, routing and reusable validation patterns for multi-step onboarding flows.</li>
+              <li>Converted Figma designs into pixel-accurate UIs using HTML5, SCSS, Bootstrap and Angular Material while keeping branding consistent across client configurations.</li>
+              <li>Improved accessibility with semantic HTML, ARIA labels, keyboard interaction, focus handling, high-contrast themes, text-size controls and English/Hindi text-to-speech prompts.</li>
+              <li>Fixed mobile viewport, fixed-footer, orientation, camera and scrolling issues across iOS and Android browsers.</li>
+              <li>Collaborated with QA, UX, product and deployment teams, resolved UAT/production defects, supported releases and mentored junior developers.</li>
+              <li>Used AI-assisted tools (ChatGPT, Claude, Cursor, Gemini, Figma AI) to speed up UI implementation, debugging and test preparation, reviewing and validating all generated output.</li>
+            </ul>
+          </li>
+
+          <li>
+            <h3>Frontend UI Developer</h3>
+            <p class="meta"><span class="company">Cambridge Technology Enterprises (CTEWebapps)</span> · Jun 2024 – Dec 2024</p>
+            <ul>
+              <li>Built and maintained responsive Webflow pages for a B2B technology website, turning approved designs into reusable production-ready layouts.</li>
+              <li>Managed CMS-driven blogs, case studies, datasheets, landing pages and forms with marketing and content teams.</li>
+              <li>Improved technical SEO and performance through responsive images, lazy loading, metadata, schema, canonical links and redirect cleanup.</li>
+              <li>Supported analytics, cross-browser QA, content releases and website maintenance in a distributed team.</li>
+            </ul>
+          </li>
+
+          <li>
+            <h3>Frontend Developer</h3>
+            <p class="meta"><span class="company">Capium Smart Accounting Solutions Pvt. Ltd.</span> · Dec 2017 – Mar 2024</p>
+            <ul>
+              <li>Developed and maintained enterprise accounting and payment web applications, adding Angular development from 2022 to 2024.</li>
+              <li>Built Angular components, routes, services, Reactive Forms, field validations and conditional UI behavior using TypeScript.</li>
+              <li>Integrated REST APIs with HttpClient and RxJS, handling response data, loading states, validation messages and UI defects.</li>
+              <li>Built responsive interfaces from 2017 to 2022 with HTML5, CSS3, SCSS, Bootstrap and JavaScript for complex accounting workflows.</li>
+              <li>Created reusable UI patterns with cross-browser compatibility, semantic markup, keyboard usability and WCAG-aligned presentation.</li>
+              <li>Supported application modernization, defect resolution, releases and production maintenance in an Agile environment.</li>
+            </ul>
+          </li>
+
+        </ul>
+      </section>
+
       <section id="projects" aria-labelledby="projects-h">
-        <h2 id="projects-h">Featured projects</h2>
+        <h2 id="projects-h">Projects</h2>
         <div class="grid">
           <article class="card">
             <h3>VerityKYC: Angular 20 eKYC Journey</h3>
             <p>
-              A responsive, accessibility-conscious digital KYC onboarding flow: OTP verification,
-              PAN check, selfie capture, bank validation, profile and eSign, with masked review
-              and save-and-resume. Verification calls are mocked and clearly labelled.
+              A responsive, accessibility-conscious digital KYC onboarding flow: mobile and email
+              OTP, PAN check, selfie capture with upload fallback, bank validation, profile,
+              masked review and eSign, with save-and-resume. Verification calls are mocked and
+              clearly labelled.
             </p>
             <ul class="chips" aria-label="Technologies">
               <li>Angular 20</li><li>Standalone components</li><li>Reactive Forms</li>
               <li>Signals</li><li>TypeScript</li><li>SCSS</li>
             </ul>
             <div class="links">
-              <a href="https://github.com/dmahesh0528/angular-ekyc-journey">Source code</a>
-              <!-- Add your live demo link here after deploying:
-              <a href="https://dmahesh0528.github.io/angular-ekyc-journey/">Live demo</a> -->
+              <a href="https://github.com/dmahesh0528/angular-ekyc-journey" target="_blank" rel="noopener">Source code</a>
+              <!-- After deploying, add: <a href="https://dmahesh0528.github.io/angular-ekyc-journey/" target="_blank" rel="noopener">Live demo</a> -->
             </div>
           </article>
 
           <article class="card">
-            <h3>Your next project</h3>
+            <h3>Previous portfolio</h3>
             <p>
-              Add another project here: what problem it solved, what you built, and the result.
-              Copy this card block for each additional project.
+              My earlier portfolio site with more design and UI work, including Webflow and
+              responsive web projects.
             </p>
             <ul class="chips" aria-label="Technologies">
-              <li>Tech 1</li><li>Tech 2</li>
+              <li>HTML5</li><li>CSS3</li><li>Webflow</li><li>Responsive UI</li>
             </ul>
             <div class="links">
-              <a href="https://github.com/dmahesh0528">GitHub</a>
+              <a href="https://maheshui.netlify.app/" target="_blank" rel="noopener">Visit site</a>
             </div>
           </article>
         </div>
-      </section>
-
-      <section id="experience" aria-labelledby="exp-h">
-        <h2 id="exp-h">Experience</h2>
-        <ul class="timeline">
-          <li>
-            <h3>Senior Frontend Developer</h3>
-            <p class="meta">Company name · Start year – Present · Hyderabad</p>
-            <ul>
-              <li>Built and maintained Angular applications for fintech and KYC/onboarding clients.</li>
-              <li>Implemented accessible, responsive UIs following WCAG guidelines.</li>
-              <li>Add a measurable result here (for example, load time or completion rate improved).</li>
-            </ul>
-          </li>
-          <li>
-            <h3>Previous role</h3>
-            <p class="meta">Company name · Years</p>
-            <ul>
-              <li>Describe your main responsibility and impact.</li>
-            </ul>
-          </li>
-        </ul>
       </section>
 
       <section id="skills" aria-labelledby="skills-h">
         <h2 id="skills-h">Skills</h2>
         <div class="skills">
-          <div>
-            <h3>Frameworks</h3>
-            <ul class="chips"><li>Angular 15+</li><li>Standalone components</li><li>RxJS</li><li>Signals</li></ul>
+          <div class="card">
+            <h3>Angular</h3>
+            <ul class="chips">
+              <li>Angular 12–20</li><li>TypeScript</li><li>Components</li><li>Services &amp; DI</li>
+              <li>Lifecycle hooks</li><li>Directives</li><li>Pipes</li><li>Standalone components</li><li>Signals</li>
+            </ul>
           </div>
-          <div>
-            <h3>Languages</h3>
-            <ul class="chips"><li>TypeScript</li><li>JavaScript</li><li>HTML5</li><li>CSS / SCSS</li></ul>
+          <div class="card">
+            <h3>Forms, Routing &amp; APIs</h3>
+            <ul class="chips">
+              <li>Reactive Forms</li><li>Custom validation</li><li>Angular Router</li><li>Route guards</li>
+              <li>Lazy loading</li><li>HttpClient</li><li>Interceptors</li><li>REST APIs</li>
+              <li>RxJS</li><li>Observables</li><li>Error handling</li>
+            </ul>
           </div>
-          <div>
-            <h3>Practices</h3>
-            <ul class="chips"><li>Accessibility (WCAG)</li><li>Responsive design</li><li>Reactive Forms</li><li>UI/UX implementation</li></ul>
+          <div class="card">
+            <h3>Frontend</h3>
+            <ul class="chips">
+              <li>JavaScript ES6+</li><li>HTML5</li><li>CSS3</li><li>SCSS / SASS</li>
+              <li>Bootstrap 4/5</li><li>Angular Material</li><li>Responsive &amp; mobile-first</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Testing &amp; Quality</h3>
+            <ul class="chips">
+              <li>Jasmine</li><li>Karma</li><li>Component/service testing</li><li>Mocks &amp; spies</li>
+              <li>Debugging</li><li>Cross-browser testing</li><li>WCAG 2.1 AA</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Design &amp; CMS</h3>
+            <ul class="chips">
+              <li>Figma</li><li>Adobe XD</li><li>Photoshop</li><li>Illustrator</li>
+              <li>Webflow</li><li>Adobe Experience Manager (familiar)</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Tools &amp; Delivery</h3>
+            <ul class="chips">
+              <li>Git / GitHub</li><li>SVN</li><li>Angular CLI</li><li>Storybook</li>
+              <li>Azure DevOps</li><li>CI/CD</li><li>Agile / Scrum</li><li>MySQL &amp; MongoDB (working knowledge)</li>
+            </ul>
           </div>
         </div>
+      </section>
+
+      <section id="education" aria-labelledby="edu-h">
+        <h2 id="edu-h">Education</h2>
+        <ul class="edu">
+          <li>
+            <strong>Master of Computer Applications (MCA)</strong>
+            <span>Vidya Dayini College of IT · 2009 – 2012</span>
+          </li>
+          <li>
+            <strong>Bachelor of Science (B.Sc.)</strong>
+            <span>Dr. B.R. Ambedkar Educational Institute · 2005 – 2008</span>
+          </li>
+        </ul>
       </section>
 
       <section id="contact" aria-labelledby="contact-h">
         <h2 id="contact-h">Contact</h2>
-        <p>I'm open to Senior Frontend / Angular opportunities. The best way to reach me:</p>
+        <p>I'm available to join immediately for Angular and Senior Frontend roles. Reach me at:</p>
         <div class="links">
-          <a href="mailto:your-email@example.com">your-email@example.com</a>
-          <a href="https://github.com/dmahesh0528">GitHub</a>
-          <a href="https://www.linkedin.com/in/your-linkedin-id">LinkedIn</a>
-          <!-- <a href="assets/Mahesh_Resume.pdf">Resume (PDF)</a> -->
+          <a href="mailto:dmahesh0528@gmail.com">dmahesh0528@gmail.com</a>
+          <a href="https://www.linkedin.com/in/devarakonda-mahesh/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/dmahesh0528" target="_blank" rel="noopener">GitHub</a>
         </div>
       </section>
 
     </div>
+
+    <footer>
+      <div class="wrap">© <span id="year">2026</span> Devarakonda Mahesh. Built with plain HTML and CSS, hosted on GitHub Pages.</div>
+    </footer>
   </main>
 
-  <footer>
-    <div class="wrap">© <span id="year">2026</span> Mahesh. Built with plain HTML and CSS, hosted on GitHub Pages.</div>
-  </footer>
-
   <script>
+    // Year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    var btn = document.getElementById('menuBtn');
+    var side = document.getElementById('sidebar');
+    btn.addEventListener('click', function () {
+      var open = side.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    side.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        side.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Highlight the active section in the left menu
+    var links = Array.prototype.slice.call(side.querySelectorAll('nav a[href^="#"]'));
+    var map = {};
+    links.forEach(function (l) { map[l.getAttribute('href').slice(1)] = l; });
+    var sections = Object.keys(map).map(function (id) { return document.getElementById(id); }).filter(Boolean);
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            links.forEach(function (l) { l.classList.remove('active'); });
+            if (map[e.target.id]) map[e.target.id].classList.add('active');
+          }
+        });
+      }, { rootMargin: '-40% 0px -55% 0px' });
+      sections.forEach(function (s) { io.observe(s); });
+    }
   </script>
 </body>
 </html>
